@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messaging App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Messaging App</h1>
+        <p>Chat locally in your browser.</p>
+      </header>
+
+      <section class="chat" aria-label="chat window">
+        <ul id="messageList" class="chat__messages" aria-live="polite"></ul>
+      </section>
+
+      <form id="messageForm" class="composer" autocomplete="off">
+        <label class="composer__field">
+          <span class="sr-only">Your name</span>
+          <input id="nameInput" name="name" type="text" maxlength="30" placeholder="Name" required />
+        </label>
+        <label class="composer__field composer__field--message">
+          <span class="sr-only">Type a message</span>
+          <input
+            id="messageInput"
+            name="message"
+            type="text"
+            maxlength="280"
+            placeholder="Type a message"
+            required
+          />
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

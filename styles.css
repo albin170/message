@@ -1,0 +1,135 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #22c55e;
+  --bubble: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0%, #0f172a 55%, #020617 100%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.app {
+  width: min(800px, 100%);
+  background: rgba(17, 24, 39, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.app__header {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.app__header p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.chat__messages {
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  max-height: 420px;
+  overflow: auto;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.chat__messages li {
+  background: var(--bubble);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.message__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.message__author {
+  color: #86efac;
+  font-weight: 600;
+}
+
+.message__text {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.composer {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.composer input,
+.composer button {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 0.6rem;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+}
+
+.composer input {
+  background: #0b1220;
+  color: var(--text);
+}
+
+.composer button {
+  cursor: pointer;
+  border-color: #22c55e;
+  background: #16a34a;
+  color: white;
+  font-weight: 700;
+}
+
+.composer button:hover {
+  background: #15803d;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .composer {
+    grid-template-columns: 1fr;
+  }
+}
